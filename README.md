@@ -20,9 +20,9 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Ruby on Rails App- <a name="about-project"></a>
+# 📖 Ruby on Rails Blog  App- <a name="about-project"></a>
 
-**Ruby on rails App -** is a Web App that shows the basic setup of a ruby on rails project.
+**Ruby on rails App -** is a Blog App 
 
 ## 🛠 Built With <a name="built-with"></a>
 VS Code
@@ -49,10 +49,6 @@ VS Code
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-There is no live demo available presently
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
