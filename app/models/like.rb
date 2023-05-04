@@ -9,4 +9,3 @@ class Like < ApplicationRecord
   end
   private :update_post_like_counter
 end
-
