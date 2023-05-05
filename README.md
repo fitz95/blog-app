@@ -46,8 +46,9 @@ VS Code
 
 - ORM model
 - Add data to database 
-- add Associations
-
+- Add Associations
+- Add Model Spec
+- Add Validation to models 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
