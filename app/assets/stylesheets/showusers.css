@@ -1,37 +1,31 @@
-.users-main {
+.user {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 20px;
+    gap: 30px;
     padding: 10px;
-  }
-  
-  .user {
+}
+.user-header {
     display: flex;
     gap: 20px;
     height: 100px;
     width: 100%;
-  }
-  
-  .user-img {
+    padding-right: 3%;
+}
+.user-img {
     width: auto;
     height: 100%;
-  }
-  
-  .user-info {
+}
+
+.user-info {
     display: flex;
     flex-direction: column;
     width: 100%;
     position: relative;
-  }
-  
-  .user-name {
-    padding-left: 10px;
-  }
-  
-  .number-of-posts {
-    align-self: flex-end;
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-  }
+}
+
+.all-post-btn {
+    align-self: center;
+    width: 100px;
+    padding: 2px;
+}

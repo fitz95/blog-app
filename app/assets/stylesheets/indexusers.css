@@ -1,0 +1,37 @@
+.users-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    padding: 10px;
+  }
+  
+  .user {
+    display: flex;
+    gap: 20px;
+    height: 100px;
+    width: 100%;
+  }
+  
+  .user-img-div {
+    width: auto;
+    height: 100%;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+  
+  .user-name {
+    padding-left: 10px;
+  }
+  
+  .number-of-posts {
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
