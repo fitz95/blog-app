@@ -44,6 +44,9 @@ VS Code
 
 ### Key Features <a name="key-features"></a>
 
+- ORM model
+- Add data to database 
+- add Associations
 
 
 
