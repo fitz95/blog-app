@@ -51,6 +51,7 @@ VS Code
 - Add Validation to models 
 - Add routes and methods for Users and Posts
 - Add pages 
+- Add test for controllers
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
