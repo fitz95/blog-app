@@ -49,6 +49,8 @@ VS Code
 - Add Associations
 - Add Model Spec
 - Add Validation to models 
+- Add routes and methods for Users and Posts
+- Add pages 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
