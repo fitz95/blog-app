@@ -1,1 +1,19 @@
-<h1>Placeholder for /users/:id</h1>
+<%= render 'shared/user', user: @user %>
+
+<div class="user-bio">
+    <h3 class="heading" >BIO</h3>
+    <p><%= @user.bio %></p>
+</div>
+
+<div class="user-posts">
+    <% @user.most_three_recent_posts.each do |post| %>
+
+        <%= render 'shared/post', post: post %>
+    <%end%>
+</div>
+
+<div class= "button_holder">
+    <button><%= link_to 'See all posts', "#{@user.id}/posts" %></button>
+    <button><%= link_to "Back", :back %></button>
+    
+</div>
