@@ -52,6 +52,7 @@ VS Code
 - Add routes and methods for Users and Posts
 - Add pages 
 - Add test for controllers
+- Add view for all routes
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
