@@ -1,1 +1,18 @@
-<h1>Placeholder for /users/:user_id/posts</h1>
+<%= render 'shared/user', user:@user%>
+    <div class="post-list">
+   <% @posts.each do |post| %>
+        <%= render 'shared/post', post: post %>
+
+
+        <% if !post.five_most_recent_comments.empty?%>
+            <div class=" post-comments">
+        <% post.five_most_recent_comments.each do |comment| %>
+            <%= render 'shared/comment', comment: comment %>
+        <%end%>
+            </div>
+        <%end%>
+    <%end%>
+    </div>
+    <div class="button_holder">
+    <button><%= link_to "Back", :back %></button>
+    </div>
