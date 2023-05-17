@@ -18,10 +18,6 @@ RSpec.describe 'Posts', type: :request do
     it 'renders template index' do
       expect(response).to render_template(:index)
     end
-
-    it 'renders the correct placeholder for post' do
-      expect(response.body).to include('Placeholder for /users/:user_id/posts')
-    end
   end
 
   describe 'GET /users/:user_id/posts/:id' do
@@ -39,7 +35,7 @@ RSpec.describe 'Posts', type: :request do
                    likescounter: 0)
       get '/users/1/posts/1'
     end
-
+ 
     it 'returns http success response' do
       expect(response).to have_http_status(:success)
     end
@@ -52,8 +48,5 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template(:show)
     end
 
-    it 'renders the correct placeholder for user post ' do
-      expect(response.body).to include('Placeholder for /users/:user_id/posts')
-    end
   end
 end

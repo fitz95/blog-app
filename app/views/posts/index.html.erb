@@ -1,7 +1,13 @@
 <%= render 'shared/user', user:@user%>
 <div class="post-list">
+<% if @posts.empty? %>
+    <h3>No posts on record</h3>
+<% else %>
 <%= render 'shared/posts', posts: @posts %>
+<%end%>
 </div>
+
+
 <div class="button_holder">
 <button><%= link_to "Back", :back %></button>
 </div>
