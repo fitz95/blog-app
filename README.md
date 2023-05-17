@@ -54,6 +54,7 @@ VS Code
 - Add test for controllers
 - Add view for all routes
 - Add form for post, comment and like  
+- Add intergration test 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
