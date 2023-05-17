@@ -15,11 +15,10 @@ describe 'Post index page', type: :feature do
                             text: 'about the struggle of an old man and the sea')
     @comment = Comment.create(post: @post, author: @user, text: 'the black cat is a great book')
     @comment_one = Comment.create(post: @post_one, author: @user, text: 'twilight is a great book')
-    
   end
 
   context 'five posts or less' do
-    visit users_posts_path(@user)
+    visit user_posts_path(@user)
     it 'shows post information' do
       expect(page).to have_content(@user.name)
       expect(page).to have_css("img[src='#{@user.photo}']")

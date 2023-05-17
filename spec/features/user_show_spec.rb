@@ -7,9 +7,9 @@ describe 'User show page', type: :feature do
                         text: 'this novel is about an antique inspector that does his best to recover stolen artefacts')
     @post_one = Post.create(author_id: @user.id, title: 'twilight ', text: 'this novel is about Vampires')
     @post_two = Post.create(author_id: @user.id, title: 'the lord of the rings',
-                          text: 'This novel is about a hobbit that has to destroy a ring')
+                            text: 'This novel is about a hobbit that has to destroy a ring')
     @post_three = Post.create(author_id: @user.id, title: 'the hobbit',
-                          text: 'this novel is about a hobbit that has to destroy a ring')
+                              text: 'this novel is about a hobbit that has to destroy a ring')
     @post_four = Post.create(author_id: @user.id, title: 'goosebump', text: 'this novel is a series of horro stories')
     visit user_posts_path(@user, @posts)
   end
