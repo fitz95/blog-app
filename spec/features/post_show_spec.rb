@@ -3,8 +3,9 @@ require 'rails_helper'
 describe 'Post show page', type: :feature do
   before :each do
     @user = User.create(name: 'Fitz Gerald', photo: 'https://via.placeholder.com/150', bio: 'I am Fitz Gerald')
-    @post = Post.create(author_id: @user.id, title: 'the black cat', text: 'this novel is about an antique inspector that does his best to recover stolen artefacts')
-    @comment = Comment.create(post: @post, author:@user, text: 'the black cat is a great book')
+    @post = Post.create(author_id: @user.id, title: 'the black cat',
+                        text: 'this novel is about an antique inspector that does his best to recover stolen artefacts')
+    @comment = Comment.create(post: @post, author: @user, text: 'the black cat is a great book')
     visit user_post_path(@user, @post)
   end
   it 'shows the title of the post' do

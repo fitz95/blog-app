@@ -35,7 +35,7 @@ RSpec.describe 'Posts', type: :request do
                    likescounter: 0)
       get '/users/1/posts/1'
     end
- 
+
     it 'returns http success response' do
       expect(response).to have_http_status(:success)
     end
@@ -47,6 +47,5 @@ RSpec.describe 'Posts', type: :request do
     it 'renders template show' do
       expect(response).to render_template(:show)
     end
-
   end
 end
