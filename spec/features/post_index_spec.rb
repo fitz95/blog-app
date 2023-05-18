@@ -17,42 +17,61 @@ describe 'Post index page', type: :feature do
     @comment_one = Comment.create(post: @post_one, author: @user, text: 'twilight is a great book')
   end
 
-  context 'five posts or less' do
-    visit user_posts_path(@user)
-    it 'shows post information' do
-      expect(page).to have_content(@user.name)
-      expect(page).to have_css("img[src='#{@user.photo}']")
-      expect(page).to have_content(@user.postscounter)
-      expect(page).to have_content(@post.title)
-      expect(page).to have_content(@post_two.text)
-      expect(page).to have_content(@post_three.text)
-      expect(page).to have_content(@comment.text)
-      expect(page).to have_content(@comment_one.text)
-      expect(page).to have_content(@post.commentscounter)
-      expect(page).to have_content(@post_four.commentscounter)
-      expect(page).to have_content(@post_two.likescounter)
-      expect(page).to have_content(@post_three.likescounter)
-    end
+  it 'shows the user profile picture' do
+    expect(page).to have_css("img[src='#{@user.photo}']")
   end
 
-  context 'more than five posts' do
+  it 'shows the username of the user' do
+    expect(page).to have_content(@user.name)
+  end
+
+  it 'shows the number of posts for the user' do
+    expect(page).to have_content(@user.posts_counter)
+  end
+
+  it 'shows the title of posts' do
+    expect(page).to have_content(@post.title)
+    expect(page).to have_content(@post_four.title)
+  end
+
+  it 'shows some of the posts text' do
+    expect(page).to have_content(@post_two.text)
+    expect(page).to have_content(@post_three.text)
+  end
+
+  it 'shows the first comments of a post' do
+    expect(page).to have_content(@comment.text)
+    expect(page).to have_content(@comment_two.text)
+  end
+
+  it 'shows the number of comments and likes for each post' do
+    expect(page).to have_content(@post.comments_counter)
+    expect(page).to have_content(@post_four.comments_counter)
+    expect(page).to have_content(@post_two.likes_counter)
+    expect(page).to have_content(@post_three.likes_counter)
+  end
+
+  it 'has no pagination for five posts or less' do
+    expect(page).not_to have_selector('nav.pagination')
+  end
+
+  it 'redirects to post show page of a clicked post' do
+    click_link @post.title
+    expect(page).to have_current_path(user_post_path(@user, @post))
+  end
+
+  it 'redirects to post show page of a clicked post' do
+    click_link @post_two.title
+    expect(page).to have_current_path(user_post_path(@user, @post_two))
+  end
+
+  context 'when there are more than 5 posts' do
     before :each do
-      @post_six = Post.create(author: @user, title: 'New Adventures', text: 'Exploring the Matrix')
-      @post_seven = Post.create(author: @user, title: 'Chasing Agents', text: 'Escape at all costs')
-      @post_eight = Post.create(author: @user, title: 'The Prophecy', text: 'Fulfilling my destiny')
-      @post_nine = Post.create(author: @user, title: 'The Final Battle', text: 'Saving humanity')
+      @post_six = Post.create(author: @user, title: 'Resurrection', text: 'I am the One')
       visit user_posts_path(@user)
     end
-
-    it 'shows only the latest five posts' do
-      expect(page).not_to have_content(@post_two.text)
-      expect(page).not_to have_content(@post_three.text)
-      expect(page).not_to have_content(@post_four.title)
-      expect(page).to have_content(@post_five.title)
-      expect(page).to have_content(@post_six.title)
-      expect(page).to have_content(@post_seven.text)
-      expect(page).to have_content(@post_eight.text)
-      expect(page).to have_content(@post_nine.title)
+    it 'has pagination' do
+      expect(page).to have_button('Pagination')
     end
   end
 end
