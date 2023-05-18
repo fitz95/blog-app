@@ -1,0 +1,3 @@
+<% comments.includes(:author).each do |comment| %>
+    <%= render 'shared/comment', comment: comment %>
+  <% end %>

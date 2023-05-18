@@ -1,0 +1,9 @@
+<% posts.each do |post| %>
+    <%= render 'shared/post', post: post %>
+  
+    <% if !post.five_most_recent_comments.empty? %>
+      <div class="post-comments">
+        <%= render 'shared/comments', comments: post.five_most_recent_comments %>
+      </div>
+    <% end %>
+  <% end %>
