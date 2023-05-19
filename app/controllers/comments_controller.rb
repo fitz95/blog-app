@@ -1,12 +1,11 @@
 class CommentsController < ApplicationController
+  before_action :set_user, only: %i[index show create]
+  before_action :set_post, only: %i[index show new create edit update destroy]
   def new
-    @post = @current_user.posts.find(params[:post_id])
   end
 
   def create
-    @user = @current_user
-    @post = Post.find(params[:post_id])
-    @comment = @current_user.comments.create(comment_params)
+    @comment = @user.comments.create(comment_params)
     @comment.post_id = @post.id
 
     if @comment.save
@@ -21,4 +20,13 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text)
   end
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
 end

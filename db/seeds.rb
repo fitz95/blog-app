@@ -12,3 +12,28 @@ second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-
 first_post = Post.create(user: first_user, title: 'Hello', text: 'This is my first post')
 
 Comment.create(post: first_post, user: second_user, text: 'Hi Tom!')
+
+first_user.all.each do |user|
+    5.times do |i|
+        Post.create(user: first_user, title: "Post #{i}", text: "This is post #{i} from #{first_user.name}")
+    end
+end
+
+second_user.all.each do |user|
+    5.times do |i|
+        Post.create(user: second_user, title: "Post #{i}", text: "This is post #{i} from #{second_user.name}")
+    end
+end
+
+User.all.each do |user|
+    user.update(password: 'password@123')
+end
+
+5.times do
+    User.create(
+      name: Faker::Name.name,
+      photo: Faker::Avatar.image,
+      bio: Faker::Lorem.paragraph,
+      email: Faker::Internet.email
+    )
+  end

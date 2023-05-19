@@ -288,3 +288,19 @@ button:hover {
 .comment_input {
   width: 200%;
 }
+
+.flash_success {
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.flash_error {
+  background-color: #f44336;
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  z-index: 100;
+}

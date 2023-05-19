@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_user, only: %i[index show new]
   def index
-    @user = User.find(params[:user_id])
     @posts = @user.most_three_recent_posts
   end
 
@@ -9,16 +9,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = @current_user.posts.new
+    @post = @user.posts.new
   end
 
   def create
-    @user = @current_user
-    @post = @current_user.posts.create(post_params)
+    @post = @user.posts.create(post_params)
 
     if @post.save
+      flash[:success] = 'Post created successfully'
       redirect_to user_post_path(@user, @post)
     else
+      flash[:alert] = "Post couldn't be created"
       render :new
     end
   end
@@ -27,5 +28,8 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text)
+  end
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end
