@@ -1,9 +1,8 @@
 class LikesController < ApplicationController
   before_action :set_user, only: %i[index show create new]
   before_action :set_post, only: %i[index show new create edit update destroy]
-  
-  def new
-  end
+
+  def new; end
 
   def create
     @like = @post.likes.new
@@ -15,8 +14,8 @@ class LikesController < ApplicationController
     end
   end
 
-  private 
-  
+  private
+
   def set_user
     @user = User.find(params[:user_id])
   end
@@ -24,5 +23,4 @@ class LikesController < ApplicationController
   def set_post
     @post = Post.find(params[:post_id])
   end
-
 end
