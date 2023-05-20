@@ -12,6 +12,20 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/shared/nav' %>
+    <% if flash[:success]%>
+      <div class='flash_success'>
+        <%= flash[:success]%>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class='flash_error'>
+        <%= flash[:error]%>
+      </div>
+    <% elsif flash.now[:success] %>
+      <div class='flash_success'>
+        <%= flash.now[:success] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

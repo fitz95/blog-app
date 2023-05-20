@@ -53,6 +53,9 @@ VS Code
 - Add pages 
 - Add test for controllers
 - Add view for all routes
+- Add form for post, comment and like  
+- Add intergration test
+- Authentication through Devise
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
